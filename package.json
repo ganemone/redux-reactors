@@ -1,8 +1,9 @@
 {
   "name": "redux-reactors",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "A small library for creating action/reducer combinations.",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.es.js",
   "scripts": {
     "test": "npm run build-test && node dist-test/index.js",
     "build-test": "rollup src/test/index.js --format cjs --output dist-test/index.js",
@@ -10,8 +11,8 @@
     "build-es": "rollup src/index.js --format es --output dist/index.es.js",
     "build": "npm run build-cjs && npm run build-es"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Giancarlo Anemone",
+  "license": "MIT",
   "dependencies": {},
   "devDependencies": {
     "redux": "^3.6.0",
