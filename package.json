@@ -1,0 +1,21 @@
+{
+  "name": "redux-reactors",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run build-test && node dist-test/index.js",
+    "build-test": "rollup src/test/index.js --format cjs --output dist-test/index.js",
+    "build-cjs": "rollup src/index.js --format cjs --output dist/index.cjs.js",
+    "build-es": "rollup src/index.js --format es --output dist/index.es.js",
+    "build": "npm run build-cjs && npm run build-es"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "redux": "^3.6.0",
+    "rollup": "^0.41.6",
+    "tape": "^4.6.3"
+  }
+}
