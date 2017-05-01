@@ -2,6 +2,8 @@
 
 A small library (TODO insert size here) for creating action/reducer combinations, also known as reactors.
 
+[![build status](https://travis-ci.org/ganemone/redux-reactors.svg?branch=master)](https://travis-ci.org/ganemone/react-redux-lite)
+
 ## Quickstart
 
 ### Install the library
