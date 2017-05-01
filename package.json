@@ -1,6 +1,6 @@
 {
   "name": "redux-reactors",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A small library for creating action/reducer combinations.",
   "main": "dist/index.cjs.js",
   "module": "dist/index.es.js",
