@@ -9,7 +9,8 @@
     "build-test": "rollup src/test/index.js --format cjs --output dist-test/index.js",
     "build-cjs": "rollup src/index.js --format cjs --output dist/index.cjs.js",
     "build-es": "rollup src/index.js --format es --output dist/index.es.js",
-    "build": "npm run build-cjs && npm run build-es"
+    "build": "npm run build-cjs && npm run build-es",
+    "prepublishOnly": "npm run build"
   },
   "author": "Giancarlo Anemone",
   "license": "MIT",
