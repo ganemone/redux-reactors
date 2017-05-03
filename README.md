@@ -1,5 +1,7 @@
 # redux-reactors
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/ganemone/redux-reactors.svg)](https://greenkeeper.io/)
+
 A small library (~20 loc) for creating action/reducer combinations, also known as reactors.
 
 [![build status](https://travis-ci.org/ganemone/redux-reactors.svg?branch=master)](https://travis-ci.org/ganemone/react-redux-lite)
