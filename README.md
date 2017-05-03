@@ -2,7 +2,8 @@
 
 A small library (~20 loc) for creating action/reducer combinations, also known as reactors.
 
-[![build status](https://travis-ci.org/ganemone/redux-reactors.svg?branch=master)](https://travis-ci.org/ganemone/react-redux-lite)
+[![build status](https://travis-ci.org/ganemone/redux-reactors.svg?branch=master)](https://travis-ci.org/ganemone/redux-reactors)
+[![npm version](https://img.shields.io/npm/v/redux-reactors.svg)](https://www.npmjs.com/package/redux-reactors)
 
 ## Quickstart
 
