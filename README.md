@@ -34,8 +34,10 @@ $ npm install redux-reactors --save
 ```javascript
 import {reactorEnhancer} from 'redux-reactors';
 import {createStore, compose} from 'redux';
+const noopReducer = (state, action) => state;
+const initialState = {};
 // ...
-const store = createStore(reducer, initialState, compose(reactorEnhancer, ...otherEnhancers));
+const store = createStore(state, initialState, compose(reactorEnhancer, ...otherEnhancers));
 ```
 
 ### Create reactors
@@ -79,4 +81,18 @@ const mapDispatchToProps = {
 
 export default connect(mapStateToProps, mapDispatchToProps)(MyComponent);
 ```
+
+## FAQ
+
+#### Can I use reactors in conjunction with standard redux actions?
+
+Yes - reactors can be used along side of a standard redux reducer. If you dispatch a standard redux action, it will follow the standard redux reducer pattern.
+
+#### If I'm using reactors, what should my root redux reducer be?
+
+If you are using 100% reactors, your root reducer can simply be a noop reducer. For example:
+```js
+const noopReducer = (state, action) => state;
+```
+
 
