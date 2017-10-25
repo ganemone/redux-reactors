@@ -9,7 +9,7 @@ A small library (~20 loc) for creating action/reducer combinations, also known a
 
 ## Motivation
 
-Colocating actions and reducers makes it very easy to trace through your code. If a component dispatches an action, you can easily see what state transformation will occur by inspecting the reactor. This pattern of colocating actions and reducers is not new, and was originally popularized by the (ducks pattern)[https://github.com/erikras/ducks-modular-redux]. `redux-reactors` takes some ideas from the ducks pattern one step further and formalizes it into an api.
+Colocating actions and reducers makes it very easy to trace through your code. If a component dispatches an action, you can easily see what state transformation will occur by inspecting the reactor. This pattern of colocating actions and reducers is not new, and was originally popularized by the [ducks pattern](https://github.com/erikras/ducks-modular-redux). `redux-reactors` takes some ideas from the ducks pattern one step further and formalizes it into an api.
 
 #### Performance
 
