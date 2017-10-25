@@ -82,6 +82,31 @@ const mapDispatchToProps = {
 export default connect(mapStateToProps, mapDispatchToProps)(MyComponent);
 ```
 
+## Scoping reducers
+
+It is often useful to scope reducers to a part of your store. This pattern is often accomplished via using redux's built in `combineReducers`. While there are many ways of accomplishing this, `redux-reactors` was designed to work nicely with the [redux-scoped-reducer](https://github.com/ganemone/redux-scoped-reducer) package. For example:
+
+```js
+import {createReactor} from 'redux-reactors';
+import createReducerScope from 'redux-scoped-reducer';
+// scope a reducer to user.views key
+const onUserViews = createReducerScope('user.views');
+const incrementReducer = ((state, action) => {
+  return Object.assign({}, {
+    counter: state.counter + action.payload,
+    state,
+  });
+});
+const decrementReducer = ((state, action) => {
+  return Object.assign({}, {
+    counter: state.counter + action.payload,
+    state,
+  });
+});
+export const incrementViewsReactor = createReactor('INCREMENT_VIEWS', onUserViews(incrementReducer));
+export const incrementViewsReactor = createReactor('DECREMENT_VIEWS', onUserViews(decrementReducer));
+```
+
 ## FAQ
 
 #### Can I use reactors in conjunction with standard redux actions?
