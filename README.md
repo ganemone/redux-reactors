@@ -104,7 +104,7 @@ const decrementReducer = ((state, action) => {
   });
 });
 export const incrementViewsReactor = createReactor('INCREMENT_VIEWS', onUserViews(incrementReducer));
-export const incrementViewsReactor = createReactor('DECREMENT_VIEWS', onUserViews(decrementReducer));
+export const decrementViewsReactor = createReactor('DECREMENT_VIEWS', onUserViews(decrementReducer));
 ```
 
 ## FAQ
