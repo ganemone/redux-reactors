@@ -22,7 +22,7 @@ tape('reactorEnhancer', function(t) {
   var store = createStore(
     mockReducer,
     mockInitialState,
-    compose(applyMiddleware(loggingMiddleware), reactorEnhancer)
+    compose(reactorEnhancer, applyMiddleware(loggingMiddleware))
   );
   store.dispatch({
     type: 'ACTION_TYPE',
@@ -40,7 +40,7 @@ tape('reactorEnhancer', function(t) {
     })
   );
   t.equal(loggedActions.length, 2, 'hits the logging middleware for both user dispatched actions');
-  t.equal(mainReducerActions.length, 2, 'two actions will go into the main reducer');
+  t.equal(mainReducerActions.length, 3, 'three actions will go into the main reducer');
   t.equal(reactorActions.length, 1, 'only one action will go into the reactor reducer');
   t.deepLooseEqual(loggedActions[0], {
     type: 'ACTION_TYPE',
@@ -53,6 +53,13 @@ tape('reactorEnhancer', function(t) {
     type: 'ACTION_TYPE',
     payload: 'some-value'
   }, 'plain dispatched action makes it into main reducer');
+
+  t.equal(mainReducerActions[2].type, 'TEST', 'reactor action makes it into main reducer');
+  t.deepLooseEqual(mainReducerActions[2].payload,  { some: 'payload' },
+    'reactor action makes it into main reducer');
+  t.equal(typeof mainReducerActions[2].__REACTOR__, 'function',
+    'reactor action contains __REACTOR__ function');
+
   t.equal(loggedActions[1].type, 'TEST', 'reactor action makes it into logging middleware');
   t.equal(reactorActions[0].type, 'TEST', 'reactor action makes it into reactor reducer');
   t.deepLooseEqual(store.getState(), {

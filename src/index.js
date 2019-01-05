@@ -1,10 +1,10 @@
 export function reactorEnhancer(createStore) {
   return function storeCreator(reducer, initialState, enhancer) {
     function wrappedReducer(state, action) {
-      if (action.__REACTOR__) {
-        return action.__REACTOR__(state, action);
-      }
-      return reducer(state, action);
+      return reducer(
+        action.__REACTOR__ ? action.__REACTOR__(state, action) : state,
+        action
+      );
     }
     return createStore(wrappedReducer, initialState, enhancer);
   };
