@@ -14,13 +14,15 @@
     "build-cjs": "rollup src/index.js --format cjs --output dist/index.cjs.js",
     "build-es": "rollup src/index.js --format es --output dist/index.es.js",
     "build": "npm run build-cjs && npm run build-es",
+    "flow": "flow check",
     "prepublishOnly": "npm run build"
   },
   "author": "Giancarlo Anemone",
   "license": "MIT",
   "dependencies": {},
   "devDependencies": {
-    "redux": "^3.6.0",
+    "flow-bin": "^0.102.0",
+    "redux": "^4.0.4",
     "rollup": "^0.41.6",
     "tape": "^4.6.3"
   }
