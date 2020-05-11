@@ -21,7 +21,7 @@
   "dependencies": {},
   "devDependencies": {
     "redux": "^3.6.0",
-    "rollup": "^0.41.6",
+    "rollup": "^2.9.1",
     "tape": "^4.6.3"
   }
 }
